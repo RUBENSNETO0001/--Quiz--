@@ -1,25 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assents/style/paginaPricipal.css" >
-    <script src="./assents/script/armazenamento.js" defer></script>
-    <title>Quiz</title>
-</head>
-<body>
-    <div id="login">
-        <label class="item_form">Me informe seu nome:</label>
-        <input type="text" class="item_form" id="nome" placeholder="Nome ou nick">
-        <button class="item_form" id="btn_login" onclick="enviar()">Entrar</button>
-    </div>
-    <div id="opcao_quiz">
-        <div id="quiz01">
-            <img src="#" alt="Anime" class="img_quiz">
-            <h1 class="titulo_quiz">Veja seu conhecimento sobre Dragon ball</h1>
-            <button id="Quiz_dragonball" class="btn_quiz">Começar Quiz</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assents/style/paginaPricipal.css">
+        <script src="./assents/script/QuizDragonBallz.js" defer></script>
+        <title>Quiz</title>
+    </head>
+    <body>
+        <div id="navbar">
+            <img src="./assents/svg/letter-q-svgrepo-com.svg" alt="Logo" id="logo">
+            <h2 id="logo_name">Quiz</h2>
         </div>
-    </div>
-</body>
+        <div id="body_quizes">
+            <div id="opcao_quiz">
+                <div class="quiz01">
+                    <img src="https://t.ctcdn.com.br/QSWuXYy4qodT9_fNwgKx5SuwleA=/1024x576/smart/i631643.jpeg" alt="Anime" class="img_quiz">
+                    <h1 class="titulo_quiz">Veja seu conhecimento sobre Dragon ball.</h1>
+                    <button id="Quiz_dragonball" class="btn_quiz" onclick="IniciarQuizDB()">Começar Quiz</button>
+                </div>
+            </div>
+        </div>
+        <!-- quiz -->
+        <div id="quiz_db">
+            <h3 id="Pergunta"></h3>
+            <button id="btnResposta">ssss</button>
+        </div>
+    </body>
 </html>
+<script>
+    function IniciarQuizDB(){
+    let nome = prompt("Digite seu nome ou nick:");
+    
+    document.getElementById("body_quizes").style.display = "none";
+    document.getElementById("quiz_db").style.display = "block";
+
+    const perguntas = (
+        {
+        pergunta: "Qual é o verdadeiro nome do Goku?",
+        opcoes: ["Vegeta", "Kakarotto", "Raditz", "Bardock"],
+        resposta: "Kakarotto"
+      },
+      {
+        pergunta: "Quantas Esferas do Dragão existem?",
+        opcoes: ["5", "6", "7", "8"],
+        resposta: "7"
+      }
+    )
+
+    for(let i = 0; i < perguntas.length; i++){
+        let resposta = document.getElementById('btnResposta');
+
+       const perguntaAtual = perguntas[i];
+  
+  // Exibe a pergunta no HTML
+  document.getElementById('Pergunta').innerText = perguntaAtual.pergunta;
+    }
+
+}
+
+
+// const usuario = new Map();
+// const pontos = 0;
+
+// usuario.set({ "nome": nome, "pontos": pontos });
+</script>

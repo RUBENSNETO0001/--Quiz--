@@ -1,50 +1,52 @@
-#opcao_quiz {
-    display: none;
-}
-
 body {
     margin: 0;
     background-color: #b0ffb7;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    background-color: #5a885e;
+    height: 60px;
+    color: rgb(255, 255, 255);
+}
+
+#logo {
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+}
+
+#logo_name {
+    margin-left: 4px;
+    font-size: 40px;
+}
+
+#opcao_quiz {
+    border: 1px solid #000;
+    border-radius: 10px;
+    width: 350px;
+    padding: 3px;
+    text-align: center;
+}
+
+.quiz01 {
+    padding: 3px;
+    border-radius: 10px;
+    background-color: aquamarine;
+    box-shadow: 0px 0px 20px 0px black;
+}
+
+
+.img_quiz {
+    height: 200px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+#body_quizes {
     display: flex;
     justify-content: center;
     height: 100vh;
     align-items: center;
-}
-
-#login {
-    border: 1px solid #00ad3a;
-    background-color: #68ff75;
-    border-radius: 10px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 20%;
-    padding: 2%;
-}
-
-.item_form{
-    margin: 5px;
-}
-#btn_login{
-    background-color: #b4ffcd;
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 1s;
-}
-#btn_login:hover{
-    background-color: #00ad3a;
-    color: rgb(0, 255, 55);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.img_quiz{
-    height: 30vh;
-    width: 30vw;
-    border-radius: 10px;
 }
