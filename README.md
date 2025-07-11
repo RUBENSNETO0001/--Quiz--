@@ -1,5 +1,5 @@
 # --Quiz--
- Esse quiz é um projeto feito em JS JavaScript, HTML e CSS. Desenvolvido para ser uma amostra de habilidade em dupla.
+ Esse quiz é um projeto feito em JS JavaScript, HTML e CSS. Desenvolvido para ser uma amostra de habilidade.
 
 ### Ferramentas usadas
 
