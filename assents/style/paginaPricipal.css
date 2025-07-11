@@ -6,9 +6,15 @@ body {
 #navbar {
     display: flex;
     align-items: center;
-    background-color: #5a885e;
+    justify-content: space-around;
+    background-color: #7db481;
     height: 60px;
     color: rgb(255, 255, 255);
+}
+
+#dentro_nav {
+    display: flex;
+    align-items: center;
 }
 
 #logo {
@@ -43,18 +49,67 @@ body {
     width: 300px;
     border-radius: 10px;
 }
+.btn_quiz{
+    border-radius: 12px;
+    background-color: whitesmoke;
+}
 
 #body_quizes {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     height: 100vh;
     align-items: center;
 }
-.div_op{
-    justify-content: center;
+
+#div_campo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.div_op {
+    border-radius: 5px;
     border: #000 1px solid;
-    padding: 5px;
+    padding: 10px;
     width: 30%;
     margin-top: 15px;
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.btn_escolha {
+    border-radius: 10px;
+    border: 1px solid #424242;
+    box-shadow: 0px 2px 5px 0px black;
+    width: -webkit-fill-available;
+    margin-right: 12px;
+    transition: 1s;
+}
+
+#btn_ops {
+    display: flex;
+    justify-content: space-around;
+}
+
+#btn_Finalizar{
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px black;
+    transition: 1s;
+}
+/* hover or active */
+.btn_quiz:hover{
+    border: #7db481 1px solid;
+    color: #b0ffb7;
+    background-color: #9b9b9b;
+}
+.btn_escolha:hover {
+    background-color: #e0e0e0;
+    color: rgb(23, 68, 68);
+}
+#btn_Finalizar:hover{
+    background-color: #222e23;
+    color: #b0ffb7;
+    border: #b0ffb7 solid 1px;
 }

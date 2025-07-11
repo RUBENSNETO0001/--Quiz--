@@ -1,8 +1,14 @@
 let pontos = 0;
-
+let nome;
 function IniciarQuizDB() {
   pontos = 0;
-  let nome = prompt("Digite seu nome ou nick:");
+  nome = prompt("Digite seu nome ou nick:");
+
+  if(nome === ''){
+    alert("Coloque um nome!!");
+    window.location.href = "./index.html";
+  }
+
   const div_quiz = document.getElementById("quiz_db");
 
   document.getElementById("body_quizes").style.display = "none";
@@ -18,23 +24,67 @@ function IniciarQuizDB() {
       pergunta: "Quantas Esferas do Dragão existem?",
       opcoes: ["5", "6", "7", "8"],
       resposta: "7"
+    },
+    {
+      pergunta: "Qual é o nome do planeta natal dos Saiyajins?",
+      opcoes: ["Namekusei", "Terra", "Vegeta", "Kaiô"],
+      resposta: "Vegeta"
+    },
+    {
+      pergunta: "Quem foi o primeiro vilão de Dragon Ball Z?",
+      opcoes: ["Freeza", "Cell", "Raditz", "Majin Buu"],
+      resposta: "Raditz"
+    },
+    {
+      pergunta: "Quem matou o Freeza pela primeira vez?",
+      opcoes: ["Goku", "Vegeta", "Trunks do Futuro", "Gohan"],
+      resposta: "Trunks do Futuro"
+    },
+    {
+      pergunta: "Quem ensinou a técnica do Kamehameha para Goku?",
+      opcoes: ["Kami Sama", "Kame", "Mestre Kame", "Mestre Karin"],
+      resposta: "Mestre Kame"
+    },
+    {
+      pergunta: "Qual é o nome do filho mais velho do Goku?",
+      opcoes: ["Goten", "Gohan", "Trunks", "Pan"],
+      resposta: "Gohan"
+    },
+    {
+      pergunta: "Qual transformação Goku atinge primeiro em Dragon Ball Z?",
+      opcoes: ["Super Saiyajin 2", "Super Saiyajin", "Kaioken", "Deus Super Saiyajin"],
+      resposta: "Kaioken"
+    },
+    {
+      pergunta: "Quem derrota Cell na saga Cell?",
+      opcoes: ["Goku", "Vegeta", "Gohan", "Trunks"],
+      resposta: "Gohan"
+    },
+    {
+      pergunta: "Quem é o criador dos Androides 17 e 18?",
+      opcoes: ["Freeza", "Dr. Gero", "Bulma", "Mestre Kame"],
+      resposta: "Dr. Gero"
     }
   ];
 
   div_quiz.innerHTML = '';
 
   let resposta = document.createElement("div");
+  resposta.id = 'div_campo';
 
   for (let i = 0; i < perguntas.length; i++) {
     resposta.innerHTML += `<div class='div_op'>
-          <h2>${perguntas[i].pergunta}</h2>
-          ${perguntas[i].opcoes.map(opcao => `<button onclick="verificarResposta('${opcao}', '${perguntas[i].resposta}')">${opcao}</button>`).join("")}
+          <h2>${i + 1}.${perguntas[i].pergunta}</h2><br>
+          <div id="btn_ops">
+            ${perguntas[i].opcoes.map(opcao => `<button class="btn_escolha" onclick="verificarResposta('${opcao}', '${perguntas[i].resposta}')">${opcao}</button>`).join("")}
+          </div>
       `;
-      div_quiz.appendChild(resposta);
+    div_quiz.appendChild(resposta);
   }
+  resposta.innerHTML += `<button id='btn_Finalizar' onclick = 'resposta()'>Vê Resultado</button>`;
 }
 
-function verificador(x, y) {
+function verificarResposta(x, y) {
   if (x === y) {
     alert("Você Acertou!!");
     pontos++;
@@ -44,3 +94,13 @@ function verificador(x, y) {
   }
 }
 
+function resposta() {
+  alert(`Senhor(a) sua pontuação é ${pontos}`);
+  //pont criando um receptor
+  let pont = JSON.parse(localStorage.getItem("DragonBall")) || [];
+  //colocando os itens nele
+  pont.push({Nome: nome, Pontuacao: pontos });
+  //jogando isso no localstrorage
+  localStorage.setItem("Pontução", JSON.stringify(pont));
+  window.location.href = "./index.html";
+}
