@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assents/svg/letter-q-svgrepo-com.svg" type="image/x-icon">
-    <script src="./assents_Rank/script/script.js" defer></script>
-    <title>Ranking</title>
-</head>
-<body>
-    <div id="rank_db"></div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./assents/svg/letter-q-svgrepo-com.svg"
+            type="image/x-icon">
+        <link rel="stylesheet" href="./assents_Rank/style/principal_rank.css">
+        <script src="./assents_Rank/script/script.js" defer></script>
+        <title>Ranking</title>
+    </head>
+    <body>
+        <div id="navbar">
+            <div id="dentro_nav">
+                <img src="./assents/svg/letter-q-svgrepo-com.svg" alt="Logo"
+                    id="logo">
+                <h2 id="logo_name">Quiz</h2>
+            </div>
+            <button onclick="ir_paginaprincipal()">Voltar</button>
+        </div>
+        <div id="body-rank">
+            <div id="rank_db"></div>
+            <div id="rank_js"></div>
+            <div id="rank_mr"></div>
+        </div>
+
+    </body>
 </html>

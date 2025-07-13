@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    background-color: #b0ffb7;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #7db481;
+    height: 60px;
+    color: rgb(255, 255, 255);
+}
+
+#dentro_nav {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+}
+
+#logo_name {
+    margin-left: 4px;
+    font-size: 40px;
+}
+#body-rank{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#db_div, #js_div, #mr_div {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}

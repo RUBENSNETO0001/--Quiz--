@@ -5,7 +5,7 @@ function IniciarQuizMiranha() {
     ponto_miranha = 0;
     nome_miranha = prompt("Digite seu nome ou nick:");
 
-    if (nome === '') {
+    if (nome_miranha === '') {
         alert("Coloque um nome!!");
         window.location.href = "./index.html";
     }
@@ -77,25 +77,23 @@ function IniciarQuizMiranha() {
         resposta.innerHTML += `<div class='div_op'>
           <h2>${i + 1}.${perguntas[i].pergunta}</h2><br>
           <div id="btn_ops">
-            ${perguntas[i].opcoes.map(opcao => `<button class="btn_escolha" onclick="verificarResposta('${opcao}', '${perguntas[i].resposta}')">${opcao}</button>`).join("")}
+            ${perguntas[i].opcoes.map(opcao => `<button class="btn_escolha" onclick="verificarRespostamr('${opcao}', '${perguntas[i].resposta}')">${opcao}</button>`).join("")}
           </div>
       `;
         div_quiz.appendChild(resposta);
     }
-    resposta.innerHTML += `<button id='btn_Finalizar' onclick = 'resposta_pgdb()'>Vê Resultado</button>`;
+    resposta.innerHTML += `<button id='btn_Finalizar' onclick = 'resposta_mr()'>Vê Resultado</button>`;
 }
 
-function verificarResposta(x, y) {
+function verificarRespostamr(x, y) {
     if (x === y) {
         alert("Você Acertou!!");
         ponto_miranha++;
     }
-    else {
-        alert("Você Errou!!");
-    }
+    else { alert("Você Errou!!"); }
 }
 
-function resposta_pgdb() {
+function resposta_mr() {
     alert(`Senhor(a) sua pontuação é ${ponto_miranha}`);
     //pont criando um receptor
     let pont_miranha = JSON.parse(localStorage.getItem("Miranha")) || [];

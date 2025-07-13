@@ -5,7 +5,7 @@ function IniciarQuizProgJS() {
   ponto_Pgjs = 0;
   nome_pgjs = prompt("Digite seu nome ou nick:");
 
-  if(nome === ''){
+  if(nome_pgjs === ''){
     alert("Coloque um nome!!");
     window.location.href = "./index.html";
   }
@@ -38,7 +38,7 @@ function IniciarQuizProgJS() {
       },
       {
         pergunta: "Como se escreve um comentário de linha única em JavaScript?",
-        opcoes: ["<!-- comentário -->", "// comentário", "/* comentário */", "** comentário **"],
+        opcoes: ["/<! -- comentário -- >", "// comentário", "/* comentário */", "** comentário **"],
         resposta: "// comentário"
       },
       {
@@ -87,7 +87,7 @@ function IniciarQuizProgJS() {
     resposta.innerHTML += `<div class='div_op'>
           <h2>${i + 1}.${perguntas[i].pergunta}</h2><br>
           <div id="btn_ops">
-            ${perguntas[i].opcoes.map(opcao => `<button class="btn_escolha" onclick="verificarResposta('${opcao}', '${perguntas[i].resposta}')">${opcao}</button>`).join("")}
+            ${perguntas[i].opcoes.map(opcao => `<button class="btn_escolha" onclick="verificarRespostajs('${opcao}', '${perguntas[i].resposta}')">${opcao}</button>`).join("")}
           </div>
       `;
     div_quiz.appendChild(resposta);
@@ -95,7 +95,7 @@ function IniciarQuizProgJS() {
   resposta.innerHTML += `<button id='btn_Finalizar' onclick = 'resposta_pgdb()'>Vê Resultado</button>`;
 }
 
-function verificarResposta(x, y) {
+function verificarRespostajs(x, y) {
   if (x === y) {
     alert("Você Acertou!!");
     ponto_Pgjs++;

@@ -1,0 +1,3 @@
+function ir_paginaRanking(){
+    window.location.href = './pagina_rank.html';
+}

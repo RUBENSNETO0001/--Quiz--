@@ -1,10 +1,10 @@
 let ponto_db = 0;
-let nome;
+let nome_db;
 function IniciarQuizDB() {
   ponto_db = 0;
-  nome = prompt("Digite seu nome ou nick:");
+  nome_db = prompt("Digite seu nome ou nick:");
 
-  if(nome === ''){
+  if(nome_db === ''){
     alert("Coloque um nome!!");
     window.location.href = "./index.html";
   }
@@ -76,7 +76,7 @@ function IniciarQuizDB() {
     resposta.innerHTML += `<div class='div_op'>
           <h2>${i + 1}.${perguntas[i].pergunta}</h2><br>
           <div id="btn_ops">
-            ${perguntas[i].opcoes.map(opcao => `<button class="btn_escolha" onclick="verificarResposta('${opcao}', '${perguntas[i].resposta}')">${opcao}</button>`).join("")}
+            ${perguntas[i].opcoes.map(opcao => `<button class="btn_escolha" onclick="verificarRespostadb('${opcao}', '${perguntas[i].resposta}')">${opcao}</button>`).join("")}
           </div>
       `;
     div_quiz.appendChild(resposta);
@@ -84,7 +84,7 @@ function IniciarQuizDB() {
   resposta.innerHTML += `<button id='btn_Finalizar' onclick = 'resposta_db()'>Vê Resultado</button>`;
 }
 
-function verificarResposta(x, y) {
+function verificarRespostadb(x, y) {
   if (x === y) {
     alert("Você Acertou!!");
     ponto_db++;
@@ -99,7 +99,7 @@ function resposta_db() {
   //pont criando um receptor
   let pont_db = JSON.parse(localStorage.getItem("DragonBall")) || [];
   //colocando os itens nele
-  pont_db.push({nome_db: nome, pontuacao_db: ponto_db });
+  pont_db.push({nome_dbb: nome_db, pontuacao_db: ponto_db });
   //jogando isso no localstrorage
   localStorage.setItem("DragonBall", JSON.stringify(pont_db));
   window.location.href = "./index.html";
