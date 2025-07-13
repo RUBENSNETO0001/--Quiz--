@@ -1,7 +1,7 @@
-let pontos = 0;
+let ponto_db = 0;
 let nome;
 function IniciarQuizDB() {
-  pontos = 0;
+  ponto_db = 0;
   nome = prompt("Digite seu nome ou nick:");
 
   if(nome === ''){
@@ -81,26 +81,26 @@ function IniciarQuizDB() {
       `;
     div_quiz.appendChild(resposta);
   }
-  resposta.innerHTML += `<button id='btn_Finalizar' onclick = 'resposta()'>Vê Resultado</button>`;
+  resposta.innerHTML += `<button id='btn_Finalizar' onclick = 'resposta_db()'>Vê Resultado</button>`;
 }
 
 function verificarResposta(x, y) {
   if (x === y) {
     alert("Você Acertou!!");
-    pontos++;
+    ponto_db++;
   }
   else {
     alert("Você Errou!!");
   }
 }
 
-function resposta() {
-  alert(`Senhor(a) sua pontuação é ${pontos}`);
+function resposta_db() {
+  alert(`Senhor(a) sua pontuação é ${ponto_db}`);
   //pont criando um receptor
-  let pont = JSON.parse(localStorage.getItem("DragonBall")) || [];
+  let pont_db = JSON.parse(localStorage.getItem("DragonBall")) || [];
   //colocando os itens nele
-  pont.push({Nome: nome, Pontuacao: pontos });
+  pont_db.push({nome_db: nome, pontuacao_db: ponto_db });
   //jogando isso no localstrorage
-  localStorage.setItem("Pontução", JSON.stringify(pont));
+  localStorage.setItem("DragonBall", JSON.stringify(pont_db));
   window.location.href = "./index.html";
 }
