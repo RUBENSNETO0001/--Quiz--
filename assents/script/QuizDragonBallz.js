@@ -5,10 +5,11 @@ function IniciarQuizDB() {
   nome_db = prompt("Digite seu nome ou nick:");
 
   
-  if (nome_db === '' || nome_db === null) {
+  if (nome_db === '' ) {
     alert("Coloque um nome!!");
     window.location.href = "./index.html";
   }
+  else if(nome_db === null){alert("Quiz Cancelado!!");window.location.href = './index.html';}
 
   const div_quiz = document.getElementById("quiz_db");
 
