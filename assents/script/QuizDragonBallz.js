@@ -4,7 +4,7 @@ function IniciarQuizDB() {
   ponto_db = 0;
   nome_db = prompt("Digite seu nome ou nick:");
 
-  if(nome_db === ''){
+  if (nome_db === '') {
     alert("Coloque um nome!!");
     window.location.href = "./index.html";
   }
@@ -99,7 +99,7 @@ function resposta_db() {
   //pont criando um receptor
   let pont_db = JSON.parse(localStorage.getItem("DragonBall")) || [];
   //colocando os itens nele
-  pont_db.push({nome_dbb: nome_db, pontuacao_db: ponto_db });
+  pont_db.push({ nome_dbb: nome_db, pontuacao_db: ponto_db });
   //jogando isso no localstrorage
   localStorage.setItem("DragonBall", JSON.stringify(pont_db));
   window.location.href = "./index.html";

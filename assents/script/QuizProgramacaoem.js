@@ -5,7 +5,7 @@ function IniciarQuizProgJS() {
   ponto_Pgjs = 0;
   nome_pgjs = prompt("Digite seu nome ou nick:");
 
-  if(nome_pgjs === ''){
+  if (nome_pgjs === '') {
     alert("Coloque um nome!!");
     window.location.href = "./index.html";
   }
@@ -17,65 +17,65 @@ function IniciarQuizProgJS() {
 
   const perguntas = [
     {
-        pergunta: "Qual palavra-chave é usada para declarar uma variável em JavaScript?",
-        opcoes: ["int", "var", "define", "val"],
-        resposta: "var"
-      },
-      {
-        pergunta: "Qual desses tipos de dados não existe em JavaScript?",
-        opcoes: ["number", "boolean", "float", "undefined"],
-        resposta: "float"
-      },
-      {
-        pergunta: "O que o método `push()` faz em um array?",
-        opcoes: [
-          "Remove o último item",
-          "Adiciona um item no fim",
-          "Ordena os itens",
-          "Remove o primeiro item"
-        ],
-        resposta: "Adiciona um item no fim"
-      },
-      {
-        pergunta: "Como se escreve um comentário de linha única em JavaScript?",
-        opcoes: ["/<! -- comentário -- >", "// comentário", "/* comentário */", "** comentário **"],
-        resposta: "// comentário"
-      },
-      {
-        pergunta: "Qual operador é usado para comparar valor e tipo em JavaScript?",
-        opcoes: ["==", "!=", "===", "=>"],
-        resposta: "==="
-      },
-      {
-        pergunta: "Qual função converte uma string em um número inteiro?",
-        opcoes: ["parseFloat()", "toNumber()", "parseInt()", "Number()"],
-        resposta: "parseInt()"
-      },
-      {
-        pergunta: "Qual estrutura de controle permite repetir um bloco de código várias vezes?",
-        opcoes: ["if", "for", "switch", "break"],
-        resposta: "for"
-      },
-      {
-        pergunta: "Qual é o escopo de uma variável declarada com `let`?",
-        opcoes: ["Global", "Apenas dentro da função", "Bloco", "Arquivo inteiro"],
-        resposta: "Bloco"
-      },
-      {
-        pergunta: "Qual é o valor de `typeof null` em JavaScript?",
-        opcoes: ["null", "undefined", "object", "boolean"],
-        resposta: "object"
-      },
-      {
-        pergunta: "Qual é a forma correta de declarar uma função?",
-        opcoes: [
-          "function = minhaFunc()",
-          "func minhaFunc()",
-          "function minhaFunc()",
-          "def minhaFunc()"
-        ],
-        resposta: "function minhaFunc()"
-      }
+      pergunta: "Qual palavra-chave é usada para declarar uma variável em JavaScript?",
+      opcoes: ["int", "var", "define", "val"],
+      resposta: "var"
+    },
+    {
+      pergunta: "Qual desses tipos de dados não existe em JavaScript?",
+      opcoes: ["number", "boolean", "float", "undefined"],
+      resposta: "float"
+    },
+    {
+      pergunta: "O que o método `push()` faz em um array?",
+      opcoes: [
+        "Remove o último item",
+        "Adiciona um item no fim",
+        "Ordena os itens",
+        "Remove o primeiro item"
+      ],
+      resposta: "Adiciona um item no fim"
+    },
+    {
+      pergunta: "Como se escreve um comentário de linha única em JavaScript?",
+      opcoes: ["/<! -- comentário -- >", "// comentário", "/* comentário */", "** comentário **"],
+      resposta: "// comentário"
+    },
+    {
+      pergunta: "Qual operador é usado para comparar valor e tipo em JavaScript?",
+      opcoes: ["==", "!=", "===", "=>"],
+      resposta: "==="
+    },
+    {
+      pergunta: "Qual função converte uma string em um número inteiro?",
+      opcoes: ["parseFloat()", "toNumber()", "parseInt()", "Number()"],
+      resposta: "parseInt()"
+    },
+    {
+      pergunta: "Qual estrutura de controle permite repetir um bloco de código várias vezes?",
+      opcoes: ["if", "for", "switch", "break"],
+      resposta: "for"
+    },
+    {
+      pergunta: "Qual é o escopo de uma variável declarada com `let`?",
+      opcoes: ["Global", "Apenas dentro da função", "Bloco", "Arquivo inteiro"],
+      resposta: "Bloco"
+    },
+    {
+      pergunta: "Qual é o valor de `typeof null` em JavaScript?",
+      opcoes: ["null", "undefined", "object", "boolean"],
+      resposta: "object"
+    },
+    {
+      pergunta: "Qual é a forma correta de declarar uma função?",
+      opcoes: [
+        "function = minhaFunc()",
+        "func minhaFunc()",
+        "function minhaFunc()",
+        "def minhaFunc()"
+      ],
+      resposta: "function minhaFunc()"
+    }
   ];
 
   div_quiz.innerHTML = '';
@@ -111,7 +111,7 @@ function resposta_pgdb() {
   let pont_pgjss = JSON.parse(localStorage.getItem("ProgJs")) || [];
 
   //colocando os itens nele
-  pont_pgjss.push({nome_js: nome_pgjs, pontuacao_js: ponto_Pgjs });
+  pont_pgjss.push({ nome_js: nome_pgjs, pontuacao_js: ponto_Pgjs });
 
   //jogando isso no localstrorage
   localStorage.setItem("ProgJS", JSON.stringify(pont_pgjss));
