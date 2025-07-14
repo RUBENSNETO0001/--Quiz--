@@ -11,7 +11,7 @@ function area_db() {
         informacao.sort((a, b) => b.pontuacao_db - a.pontuacao_db);
         if (informacao.length > 0) {
             elemento_db.innerHTML += `
-            <h3>Nome: ${informacao[i].nome_db} || Pontuação: ${informacao[i].pontuacao_db}</h3>
+            <h3>Nome: ${informacao[i].nome_dbb} || Pontuação: ${informacao[i].pontuacao_db}</h3>
         `;
         }
         else {
