@@ -5,7 +5,7 @@ function IniciarQuizMiranha() {
     ponto_miranha = 0;
     nome_miranha = prompt("Digite seu nome ou nick:");
 
-    if (nome_miranha === '') {
+    if (nome_db === '' || nome_db === null) {
         alert("Coloque um nome!!");
         window.location.href = "./index.html";
     }

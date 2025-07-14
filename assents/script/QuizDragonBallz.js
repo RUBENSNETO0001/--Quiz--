@@ -4,7 +4,8 @@ function IniciarQuizDB() {
   ponto_db = 0;
   nome_db = prompt("Digite seu nome ou nick:");
 
-  if (nome_db === '') {
+  
+  if (nome_db === '' || nome_db === null) {
     alert("Coloque um nome!!");
     window.location.href = "./index.html";
   }

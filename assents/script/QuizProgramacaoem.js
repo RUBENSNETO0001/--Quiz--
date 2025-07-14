@@ -5,7 +5,7 @@ function IniciarQuizProgJS() {
   ponto_Pgjs = 0;
   nome_pgjs = prompt("Digite seu nome ou nick:");
 
-  if (nome_pgjs === '') {
+  if (nome_db === '' || nome_db === null) {
     alert("Coloque um nome!!");
     window.location.href = "./index.html";
   }

@@ -53,7 +53,7 @@ function area_mr() {
     let informacao = JSON.parse(localStorage.getItem("Miranha")) || [];
     elemento_db.id = 'mr_div';
     const div_principal_db = document.getElementById("rank_mr");
-    elemento_db.innerHTML = "<h1>Rank Programação em JS</h1><br>";
+    elemento_db.innerHTML = "<h1>Rank Sobre o Homem Aranha</h1><br>";
 
     for (let i = 0; i < informacao.length; i++) {
         informacao.sort((a, b) => b.pontuacao_js - a.pontuacao_js);
